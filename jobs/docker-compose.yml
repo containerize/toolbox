@@ -1,0 +1,9 @@
+version: "3"
+
+services: 
+  app:
+    image: containerize/toolbox:jobs
+    environment: 
+      - HEALTHCHECK_URL=https://hchk.io/4280707d-d795-44e4-974d-82d77511bee2
+    volumes: 
+      - /var/run/docker.sock:/var/run/docker.sock
