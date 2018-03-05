@@ -1,6 +1,6 @@
 FROM docker:stable
 
-RUN apk add --no-cache curl
+RUN apk add --no-cache curl tzdata
 
 COPY crontabs /etc/crontabs
 COPY periodic /etc/periodic
