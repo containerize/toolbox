@@ -1,0 +1,14 @@
+FROM alpine:3.7
+RUN apk add --no-cache openssh-client
+
+ENV SSH_LOCAL_BIND_ADDRESS=0.0.0.0
+ENV SSH_LOCAL_BIND_PORT=8080
+ENV SSH_REMOTE_BIND_HOST=127.0.0.1
+ENV SSH_REMOTE_BIND_PORT=80
+ENV SSH_HOST=127.0.0.1
+ENV SSH_PORT=22
+ENV SSH_USER=root
+
+ADD entrypoint.sh /usr/local/bin
+
+ENTRYPOINT [ "entrypoint.sh" ]
