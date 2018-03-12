@@ -1,6 +1,7 @@
-FROM docker:stable
+FROM containerize/toolbox:base
 
-RUN apk add --no-cache curl tzdata
+RUN apk add --no-cache curl tzdata \
+    rsync docker=17.12.1-r0 openssh-client
 
 COPY crontabs /etc/crontabs
 COPY periodic /etc/periodic
