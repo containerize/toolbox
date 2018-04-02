@@ -11,8 +11,7 @@ RUN set -e \
     && cd $HOME/.oh-my-zsh \
     && sh ./tools/upgrade.sh \
     && echo "add zsh plugins" \
-    && git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions \
-    && sed -i 's/plugins=(.*)/plugins=(git zsh-autosuggestions docker-compose docker)/' $HOME/.zshrc
+    && sed -i 's/plugins=(.*)/plugins=(git docker-compose docker)/' $HOME/.zshrc
 
 ENV DOCKER_CERT_PATH=/data/compose/.docker
 ENV DOCKER_HOST=tcp://127.0.0.1:2376
