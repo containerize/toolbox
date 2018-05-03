@@ -4,8 +4,9 @@ RUN set -e \
     && echo "install docker and other tools" \
     && apk add --no-cache docker rsync make openssh-client \
     python3 \
-    && echo "install python" \
-    && pip3 install docker-compose \
+    && echo "upgrade pip" \
+    && pip3 install --upgrade pip \
+    && pip install docker-compose \
     && rm -rf $HOME/.cache \
     && echo "upgrade zsh" \
     && cd $HOME/.oh-my-zsh \
